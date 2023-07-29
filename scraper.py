@@ -5,7 +5,7 @@ import requests
 
 link = "https://www.ebay.com/sch/i.html?_from=R40&_nkw=iPhone+10&_sacat=0&LH_TitleDesc=0&_sop=12"
 
-def getData(link):
+def getdata(link):
     r = requests.get(link)
     soup = BeautifulSoup(r.text, 'html.parser')
     return soup
@@ -23,5 +23,5 @@ def parse(soup):
         print(products)
     return
 
-soup = getData(link)
+soup = getdata(link)
 parse(soup)
